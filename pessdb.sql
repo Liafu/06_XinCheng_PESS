@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2021 at 09:53 AM
+-- Generation Time: Jun 03, 2021 at 12:55 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -43,7 +43,8 @@ INSERT INTO `dispatch` (`incident_id`, `patrolcar_id`, `time_dispatched`, `time_
 (1, 'QX4444P', '2014-05-29 10:51:15', '0000-00-00 00:00:00', '2014-05-29 10:53:43'),
 (2, 'QX45545', '2014-05-29 10:59:42', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (3, 'QX9999H', '2015-10-29 10:59:42', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(4, 'QH3531J', '2001-10-13 08:50:42', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(4, 'QH3531J', '2001-10-13 08:50:42', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(15, 'QX1234D', '2021-06-03 06:54:37', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -70,7 +71,8 @@ INSERT INTO `incident` (`incident_id`, `caller_name`, `phone_number`, `incident_
 (1, 'PETER LEOW', '81234567', '060', 'Junction of North Bridge Rd. and Middle Rd.', 'A bus collided with a taxi. 2 Injuries.', '1', '2014-05-29 09:54:48'),
 (2, 'qwerty', '12345678', '999', 'what', 'meme', '3', '2014-05-29 11:51:22'),
 (3, 'Laifu Waifu', '35163191', '050', 'Jurong Point', 'A tree fell on the upper floors of the mall, unknown amount of injuries.', '1', '0000-00-00 00:00:00'),
-(4, 'PAIN', '25316312', '070', 'who dis?', 'what dis?', '1', '0000-00-00 00:00:00');
+(4, 'PAIN', '25316312', '070', 'who dis?', 'what dis?', '1', '0000-00-00 00:00:00'),
+(15, 'yeet', '3154641', '030', 'yeet', 'yeet', '2', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -134,13 +136,13 @@ CREATE TABLE `patrolcar` (
 --
 
 INSERT INTO `patrolcar` (`patrolcar_id`, `patrolcar_status_id`) VALUES
+('QH3531J', '1'),
 ('QX1234D', '1'),
 ('QX2222G', '1'),
-('QX4321R', '1'),
 ('QX4444P', '1'),
 ('QX45545', '1'),
 ('QX9999H', '1'),
-('QH3531J', '3');
+('QX4321R', '3');
 
 -- --------------------------------------------------------
 
@@ -162,7 +164,7 @@ INSERT INTO `patrolcar_status` (`patrolcar_status_id`, `patrolcar_status_desc`) 
 ('2', 'PATROL'),
 ('3', 'FREE'),
 ('4', 'On-Site'),
-('5', 'NA');
+('5', 'N/A');
 
 --
 -- Indexes for dumped tables
@@ -216,7 +218,7 @@ ALTER TABLE `patrolcar_status`
 -- AUTO_INCREMENT for table `incident`
 --
 ALTER TABLE `incident`
-  MODIFY `incident_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `incident_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
@@ -233,8 +235,7 @@ ALTER TABLE `dispatch`
 --
 ALTER TABLE `incident`
   ADD CONSTRAINT `incident_ibfk_1` FOREIGN KEY (`incident_type_id`) REFERENCES `incident_type` (`incident_type_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `incident_ibfk_2` FOREIGN KEY (`incident_status_id`) REFERENCES `incident_status` (`incident_status_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `incident_ibfk_3` FOREIGN KEY (`incident_id`) REFERENCES `dispatch` (`incident_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `incident_ibfk_2` FOREIGN KEY (`incident_status_id`) REFERENCES `incident_status` (`incident_status_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `patrolcar`
