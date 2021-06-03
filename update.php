@@ -6,28 +6,28 @@
 		<meta charset="utf-8">
 		
 		<style>
-			.button {
-			  display: inline-block;
-			  padding: 5px 15px;
-			  font-size: 20px;
-			  cursor: pointer;
-			  text-align: center;
-			  text-decoration: none;
-			  outline: none;
-			  color: #fff;
-			  background-color: #4CAF50;
-			  border: none;
-			  border-radius: 15px;
-			  box-shadow: 0 9px #999;
-			}
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #fe8019;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
 
-			.button:hover {background-color: #3e8e41}
+.button:hover {background-color: #e47316}
 
-			.button:active {
-			  background-color: #3e8e41;
-			  box-shadow: 0 5px #666;
-			  transform: translateY(4px);
-			}
+.button:active {
+  background-color: #e47316;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 
 		</style>
 		
@@ -56,7 +56,7 @@
 					<tr>
 						<td>Patrol Car ID :</td>
 						<td><input type="text" name="patrolCarId" id="patrolCarId"></td>
-						<td><input type="submit" name="btnSearch" id="btnSearch" value="Search"></td>
+						<td><input type="submit" name="btnSearch" id="btnSearch" class="button" value="Search"></td>
 					</tr>
 			</table>
 	
@@ -149,9 +149,9 @@
 						</select></td>
 					</tr>
 					<tr>
-						<td><input type="reset" name="btnCancel" id="btnCancel" class="ContentStyle" value="Reset"></td>
+						<td><input type="reset" name="btnCancel" id="btnCancel" class="button" value="Reset"></td>
 						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit"
-						name="btnUpdate" id="btnUpdate" class="ContentStyle" value="Update"> </td>
+						name="btnUpdate" id="btnUpdate" class="button" value="Update"> </td>
 					</tr>
 				</table>
 			</form>

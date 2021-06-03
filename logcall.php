@@ -48,16 +48,16 @@
 		  text-decoration: none;
 		  outline: none;
 		  color: #fff;
-		  background-color: #4CAF50;
+		  background-color: #fe8019;
 		  border: none;
 		  border-radius: 15px;
 		  box-shadow: 0 9px #999;
 		}
 
-		.button:hover {background-color: #3e8e41}
+		.button:hover {background-color: #e47316}
 
 		.button:active {
-		  background-color: #3e8e41;
+		  background-color: #e47316;
 		  box-shadow: 0 5px #666;
 		  transform: translateY(4px);
 		}
@@ -143,10 +143,10 @@
 				</tr>
 				<tr>
 					<td><input type="Reset" name="btnCancel" id="btnCancel"
-						value="Reset">
+						class="button" value="Reset">
 					</td>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit"
-					name="btnProcessCall" id="btnProcessCall" value="Process Call...">
+					name="btnProcessCall" id="btnProcessCall" class="button" value="Process Call...">
 					</td>
 				</tr>	
 		</table>
